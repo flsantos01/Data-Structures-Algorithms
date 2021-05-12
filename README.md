@@ -7,7 +7,7 @@ Data Structures:
 * Binary Search Tree
 * AVL Tree
   - A
-  - B
+  * B
 * B Tree
 * Linked List
 * Doubly Linked List
