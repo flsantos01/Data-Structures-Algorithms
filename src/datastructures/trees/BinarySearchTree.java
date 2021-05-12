@@ -1,59 +1,62 @@
 package datastructures.trees;
 
-public class BinarySearchTree<T extends Comparable<T>> 
+public class BinarySearchTree<T extends Comparable<T>> implements IBinarySearchTree<T>
 {
-	private TreeNode<T> root;
+	private BSTNode<T> root;
 	
-	private void printValue(TreeNode<T> root) 
-	{
-		System.out.println(this.root.getValue());
-	}
-	
-	public void inOrder(TreeNode<T> root) 
+	@Override
+	public void inOrder(BSTNode<T> root) 
 	{
 		inOrder(root.getLeft());
 		printValue(root);
 		inOrder(root.getRight());
 	}
 	
-	public void preOrder(TreeNode<T> root) 
+	@Override
+	public void preOrder(BSTNode<T> root) 
 	{
 		printValue(root);
 		preOrder(root.getLeft());
 		preOrder(root.getRight());
 	}
 	
-	public void postOrder(TreeNode<T> root) 
+	@Override
+	public void postOrder(BSTNode<T> root) 
 	{
 		postOrder(root.getLeft());
 		postOrder(root.getRight());
 		printValue(root);
 	}
 	
-	public TreeNode<T> createNode(T value)
+	@Override
+	public BSTNode<T> createNode(T value)
 	{
-		TreeNode<T> new_node = new TreeNode<T>(value, null, null);
+		BSTNode<T> new_node = new BSTNode<T>(value, null, null);
 		return new_node;
 	}
 	
-	public int nodesAmount(TreeNode<T> root) 
+	@Override
+	public int nodesAmount(BSTNode<T> root) 
 	{
 		if(root != null) 
 		{
 			return nodesAmount(root.getLeft()) + 1 + nodesAmount(root.getRight());
 		}
+		
 		else 
 		{
 			return 0;
 		}
 	}
 	
+	@Override
 	public void destroyTree() 
 	{
 		this.root = null;
 	}
 	
-	public TreeNode<T> searchNode(TreeNode<T> root, T value)
+	@Override
+	public BSTNode<T> searchNode(BSTNode<T> root, T value)
 	{
 		if(root != null) 
 		{
@@ -61,31 +64,43 @@ public class BinarySearchTree<T extends Comparable<T>>
 			{
 				return root;
 			}
+			
 			if(value.compareTo(root.getValue()) == 1) 
 			{
 				searchNode(root.getRight(), value);
 			}
+			
 			else 
 			{
 				searchNode(root.getLeft(), value);
 			}
 		}
+		
 		return null;
 	}
 	
-	public TreeNode<T> insertNode(TreeNode<T> root, T value)
+	@Override
+	public BSTNode<T> insertNode(BSTNode<T> root, T value)
 	{
 		if(root == null) 
 		{
 			return createNode(value);
 		}
+		
 		if(value.compareTo(root.getValue()) == 1) 
 		{
 			root.setRight(insertNode(root.getRight(), value));
 		}
+		
 		if(value.compareTo(root.getValue()) == -1) {
 			root.setLeft(insertNode(root.getLeft(), value));
 		}
+		
 		return root;
+	}
+
+	private void printValue(BSTNode<T> root) 
+	{
+		System.out.println(this.root.getValue());
 	}
 }

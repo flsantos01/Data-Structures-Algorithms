@@ -1,6 +1,6 @@
 package datastructures.trees;
 
-public final class AVLTree<T extends Comparable<T>> extends BinarySearchTree<T> 
+public final class AVLTree<T extends Comparable<T>> implements IAVLTree<T>
 {
 	
 }
