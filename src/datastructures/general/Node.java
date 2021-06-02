@@ -4,12 +4,17 @@ public class Node<T>
 {
 	protected T value;
 	
-	public void setValue(T value) 
+	protected Node(T value)
+	{
+		setValue(value);
+	}
+	
+	protected void setValue(T value) 
 	{
 		this.value = value;
 	}
 	
-	public T getValue() 
+	protected T getValue() 
 	{
 		return value;
 	}
