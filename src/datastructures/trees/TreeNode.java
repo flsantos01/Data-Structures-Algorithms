@@ -3,12 +3,16 @@ package datastructures.trees;
 import datastructures.general.Node;
 
 public class TreeNode<T> extends Node<T> {
-
 	private TreeNode<T> left;
 	private TreeNode<T> right;
 
-	protected TreeNode(T value) {
+	public TreeNode(T value) {
 		super(value);
+	}
+	
+	@Override
+	public T getValue() {
+		return super.getValue();
 	}
 
 	public TreeNode<T> getLeft() {
