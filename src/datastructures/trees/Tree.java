@@ -1,7 +1,5 @@
 package datastructures.trees;
 
-import datastructures.trees.TreeNode;
-
 public interface Tree<T> {
 	public void inOrder(TreeNode<T> root);
 	public void preOrder(TreeNode<T> root);
