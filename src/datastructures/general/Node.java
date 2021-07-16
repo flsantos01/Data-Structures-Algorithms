@@ -1,11 +1,7 @@
 package datastructures.general;
 
-public class Node<T> {
+public abstract class Node<T> {
 	protected T value;
-
-	protected Node(T value) {
-		setValue(value);
-	}
 
 	protected void setValue(T value) {
 		this.value = value;
@@ -14,4 +10,5 @@ public class Node<T> {
 	protected T getValue() {
 		return value;
 	}
+	
 }
