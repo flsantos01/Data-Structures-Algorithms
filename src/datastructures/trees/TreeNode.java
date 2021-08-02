@@ -8,7 +8,7 @@ public class TreeNode<T> extends Node<T> {
 	private int height;
 	
 	public TreeNode(T value) {
-		super(value);
+		
 	}
 	
 	@Override
