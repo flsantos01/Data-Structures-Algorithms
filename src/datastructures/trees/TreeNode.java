@@ -5,7 +5,8 @@ import datastructures.general.Node;
 public class TreeNode<T> extends Node<T> {
 	private TreeNode<T> left;
 	private TreeNode<T> right;
-
+	private int height;
+	
 	public TreeNode(T value) {
 		super(value);
 	}
