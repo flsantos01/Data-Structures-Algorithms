@@ -7,8 +7,11 @@ public class TreeNode<T> extends Node<T> {
 	private TreeNode<T> right;
 	private int height;
 	
-	public TreeNode(T value) {
+	
+	
+	public TreeNode(T value, int height) {
 		setValue(value);
+		
 	}
 	
 	@Override
