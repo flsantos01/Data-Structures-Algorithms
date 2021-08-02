@@ -9,6 +9,5 @@ public abstract class Node<T> {
 
 	protected T getValue() {
 		return value;
-	}
-	
+	}	
 }
