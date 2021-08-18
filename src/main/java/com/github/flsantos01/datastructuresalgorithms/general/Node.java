@@ -1,4 +1,4 @@
-package datastructures.general;
+package com.github.flsantos01.datastructuresalgorithms.general;
 
 public abstract class Node<T> {
 	protected T value;
